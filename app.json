@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/person/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#2b2e33",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小意思",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "#dark"
+  },
+  "tabBar": {
+    "color": "#74777e",
+    "selectedColor": "#f06000",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/images/home.png",
+        "selectedIconPath": "assets/images/homes.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/person/index",
+        "iconPath": "assets/images/person.png",
+        "selectedIconPath": "assets/images/persons.png",
+        "text": "个人"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
