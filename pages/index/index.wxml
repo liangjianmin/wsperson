@@ -1,3 +1,21 @@
 <view class="container">
-    
+
+  <view class="nav-scroll">
+    <scroll-view class="scroll-view_H" scroll-x="true" scroll-with-animation="true">
+      <text wx:for="{{section}}" wx:key="id" id="{{item.id}}" catchtap="handleTap" class="nav-name {{item.id == currentId ? 'nav-hover' : ''}}">{{item.name}}</text>
+    </scroll-view>
+  </view>
+
+  <view class="section">
+    <block wx:for="{{news}}">
+      <navigator url="{{item.url}}?id={{item.id}}">
+        <view class="item">
+          <view class="txt">
+            <text>{{item.content}}</text>
+          </view>
+          <text class="tip">2017-08-01 11:40:04</text>
+        </view>
+      </navigator>
+    </block>
+  </view>
 </view>

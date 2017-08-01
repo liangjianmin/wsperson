@@ -1,21 +1,58 @@
-/**index.wxss**/
-.userinfo {
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.nav-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #e13b19;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.scroll-view_H {
+  white-space: nowrap;
+  width: 100%;
+  background: #fff;
 }
 
-.usermotto {
-  margin-top: 200px;
+.nav-name {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 32rpx;
+  color: #a1a1a1;
+  padding: 20rpx;
+  transition: all 0.4s linear;
+}
+
+.nav-hover {
+  font-size: 34rpx;
+  color: #e13b19;
+  font-weight: bold;
+}
+
+.section {
+  margin-top: 80rpx;
+  width: 100%;
+  padding: 30rpx 0;
+}
+
+.section .item {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 20rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.section .item .txt text {
+  font-size: 33rpx;
+  line-height: 50rpx;
+  color: #172c45;
+}
+
+.section .item .tip {
+  margin-top: 25rpx;
+  font-size: 33rpx;
+  color: #8a8a8a;
 }

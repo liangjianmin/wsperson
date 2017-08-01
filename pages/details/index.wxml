@@ -1,0 +1,3 @@
+<view class="container">
+    <text>id：{{id}}</text>
+</view>

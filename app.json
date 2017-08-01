@@ -1,7 +1,8 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/person/index"
+    "pages/person/index",
+    "pages/details/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2b2e33",
@@ -15,7 +16,8 @@
     "selectedColor": "#f06000",
     "borderStyle": "white",
     "backgroundColor": "#fff",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "iconPath": "assets/images/home.png",
         "selectedIconPath": "assets/images/homes.png",
