@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import "base";
+body{
+  overflow: hidden;
+  background: #FCFCFC;
+}
+.header{
+  background-color: #242f42;
+}
+.page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.section-left{
+  background: #eef1f6;
+  box-sizing: border-box;
+  height: calc(100vh - 60px);
+}
+.section-right{
+  padding: 30px 30px 30px 20px;
+  box-sizing: border-box;
+  height: calc(100vh - 60px);
+}
+.el-notification{
+  left:0;
+  right:0;
+  margin:0 auto;
+}
+#app{
+  width: 100%;
+  height: 100%;
+}
+.el-breadcrumb{
+  padding: 20px 0;
+}
+.el-menu-nav{
+  padding-right: 20px;
+  >li{
+    float: right !important;
+    .el-submenu__title{
+      border: none !important;
+    }
+    .el-menu{
+      top:60px !important;
+    }
+  }
+}
+
+.login-view{
+
+}
