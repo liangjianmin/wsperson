@@ -34,7 +34,6 @@ app.use(cookieParser());
 app.use(session({
     secret: 'appuser',
     name: 'user',
-    cookie: {maxAge: 3600000 * 24 * 30},
     resave: false,
     saveUninitialized: true
 }));

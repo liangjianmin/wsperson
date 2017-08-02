@@ -5,10 +5,14 @@
             <el-col :span="3" class="section-left">
                 <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" unique-opened router>
                     <el-menu-item index="/home"><i class="el-icon-menu"></i>主页</el-menu-item>
-                    <el-submenu index="1">
+                    <el-submenu index="1" v-if="user == 0 || user == 1">
                         <template slot="title"><i class="el-icon-message"></i>用户管理</template>
-                        <el-menu-item  index="/home/adduser">增加用户</el-menu-item>
-                        <el-menu-item  index="/home/userlist">用户操作</el-menu-item>
+                        <el-menu-item  v-if="user == 0" index="/home/adduser">增加用户</el-menu-item>
+                        <el-menu-item  v-if="user == 0 || user == 1" index="/home/userlist">用户操作</el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="2">
+                        <template slot="title"><i class="el-icon-message"></i>新闻管理</template>
+                        <el-menu-item  index="/shopsave">抓取文章</el-menu-item>
                     </el-submenu>
                 </el-menu>
             </el-col>
@@ -32,8 +36,8 @@
             }
         },
         computed: {
-            mapState(state){
-                user:state.user.sessiondata
+            user(){
+                return this.$store.state.user.sessiondata.role;
             },
             onRoutes(){
                 return this.$route.path;
