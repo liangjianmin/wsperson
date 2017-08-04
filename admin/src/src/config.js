@@ -3,6 +3,7 @@ const Start = resolve => require(['./views/home/Start.vue'], resolve)
 const Adduser = resolve => require(['./views/user/User.vue'], resolve)
 const Userlist = resolve => require(['./views/user/UserList.vue'], resolve)
 const Login = resolve => require(['./views/user/Login.vue'], resolve)
+const WorldNews = resolve => require(['./views/news/WorldNews.vue'], resolve)
 
 export  default[
     {
@@ -23,6 +24,11 @@ export  default[
                 path: 'userlist',
                 component: Userlist,
                 name: '用户管理'
+            },
+            {
+                path: 'worldnews',
+                component: WorldNews,
+                name: '国内新闻'
             }
         ]
     },

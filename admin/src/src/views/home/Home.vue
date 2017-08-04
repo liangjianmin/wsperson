@@ -11,8 +11,8 @@
                         <el-menu-item  v-if="user == 0 || user == 1" index="/home/userlist">用户操作</el-menu-item>
                     </el-submenu>
                     <el-submenu index="2">
-                        <template slot="title"><i class="el-icon-message"></i>新闻管理</template>
-                        <el-menu-item  index="/shopsave">抓取文章</el-menu-item>
+                        <template slot="title"><i class="el-icon-message"></i>RSS管理</template>
+                        <el-menu-item  index="/home/worldnews">腾讯国内新闻</el-menu-item>
                     </el-submenu>
                 </el-menu>
             </el-col>

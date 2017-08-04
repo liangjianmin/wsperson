@@ -134,4 +134,11 @@ body {
     .el-menu-nav > li .el-menu {
       top: 60px !important; }
 
+.page-block {
+  margin-top: 20px;
+  text-align: right; }
+
+.el-table__header {
+  width: 100% !important; }
+
 /*# sourceMappingURL=page.css.map */
