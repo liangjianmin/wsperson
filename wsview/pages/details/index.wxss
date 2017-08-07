@@ -1,1 +1,37 @@
-/* index.wxss */
+.details {
+  padding: 20rpx;
+  font-size: 33rpx;
+  line-height: 50rpx;
+  color: #172c45;
+  text-align: justify;
+}
+
+.tit {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: block;
+  line-height: 60rpx;
+}
+
+.txt {
+  line-height: 60rpx;
+  display: block;
+}
+
+.tip {
+  text-align: right;
+}
+
+.time {
+  margin-top: 20px;
+  color: #838487;
+  display: block;
+}
+
+.from {
+  display: block;
+  margin-top: 5px;
+   color: #838487;
+}

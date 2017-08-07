@@ -8,7 +8,7 @@
 
   <view class="section">
     <block wx:for="{{news}}" wx:key="unique">
-      <navigator url="{{item.url}}?id={{item.id}}">
+      <navigator url="/pages/details/index?id={{item.id}}">
         <view class="item">
           <view class="txt">
             <text>{{item.title}}</text>

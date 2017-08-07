@@ -21,6 +21,14 @@ module.exports = {
      * 获取腾讯新闻列表
      * @param callback
      */
+    getNewDetails: function (id, callback) {
+        sql = "SELECT * FROM `news` WHERE id=" + id;
+        mysqlDB.getTableAllInfo({sql: sql}, callback);
+    },
+    /**
+     * 获取腾讯新闻列表
+     * @param callback
+     */
     getNews: function (p, limit, callback) {
         sql = "select * from news ORDER BY id DESC limit " + p + "," + limit;
         mysqlDB.getTableAllInfo({sql: sql}, callback);

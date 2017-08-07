@@ -138,7 +138,8 @@ body {
 
 .page-block {
   margin-top: 20px;
-  text-align: right; }
+  text-align: right;
+  margin-bottom: 20px; }
 
 .el-table__header {
   width: 100% !important; }

@@ -95,4 +95,16 @@ module.exports = function (app) {
             res.send(data);
         });
     });
+
+    /**
+     * 获取新闻详情
+     */
+    app.get('/newsdetails', function (req, res) {
+        var id = req.query.id;
+        news.getNewDetails(id, function (data) {
+            if(data.status){
+                res.send(data);
+            }
+        })
+    })
 };

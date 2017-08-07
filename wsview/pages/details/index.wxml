@@ -1,3 +1,12 @@
 <view class="container">
-    <text>id：{{id}}</text>
+   <view class="details">
+        <block wx:for="{{newdetails}}" wx:key="unique">
+          <text class="tit">{{item.title}}</text>           
+          <text class="txt">{{item.description}}</text>
+          <view class="tip">
+             <text class="time">{{item.pubDate}}</text>
+             <text class="from">腾讯新闻</text>
+          </view>
+        </block>
+   </view>
 </view>

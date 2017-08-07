@@ -1,6 +1,8 @@
 var app = getApp();
 Page({
   data: {
+    current: 1,
+    maxPage: 1,
     currentId: '1001',
     section: [
       { name: '推荐', id: '1001' },
@@ -11,30 +13,35 @@ Page({
       { name: '军事', id: '1006' },
       { name: '历史', id: '1007' },
     ],
-    news: [
-      {
-        url: "/pages/details/index",
-        content: "杀妻骗保！男子外有小三并欠债 为妻买400万保险后谋划车祸",
-        id: '001'
-      }
-    ]
+    news: []
   },
   onReady: function () {
-    var self=this;
+    var self = this;
     wx.showLoading({
       title: '加载中',
-      mask:true
+      mask: true
     });
     wx.request({
-      url: 'https://ljm.jiangwei58.cn/getnews?p=1',
-      data: {
-      
-      },
+      url: 'https://ljm.jiangwei58.cn/getnews?p=' + self.data.current,
       success: function (res) {
-        self.setData({ news: res.data.list.data });
+        self.setData({ news: self.data.news.concat(res.data.list.data) });
+        self.setData({ maxPage: res.data.maxPage });
         wx.hideLoading()
       }
     })
+  },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    var self = this;
+    var count = self.data.current++;
+    if (count >= self.data.maxPage) {
+      return false;
+    }
+    setTimeout(function () {
+      self.onReady();
+    }, 500)
   },
   handleTap: function (e) {
     let id = e.currentTarget.id;

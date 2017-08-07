@@ -35,7 +35,6 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        color: #1f2d3d;
     }
 
     .linktext {

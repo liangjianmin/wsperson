@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-      id:""
+      id:"",
+      newdetails:[]
   },
 
   /**
@@ -19,7 +20,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    var self = this;
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    });
+    wx.request({
+      url: 'https://ljm.jiangwei58.cn/newsdetails?id=' + self.data.id,
+      success: function (res) {
+        self.setData({ newdetails: res.data.data });
+        wx.hideLoading()
+      }
+    })
   },
 
   /**
