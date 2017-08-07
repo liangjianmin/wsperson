@@ -9,23 +9,16 @@
                         <p class="text">{{scope.row.title}}</p>
                     </template>
                 </el-table-column>
-                <el-table-column prop="pubDate" label="时间" width="200"></el-table-column>
-                <el-table-column property="flag" label="来源" width="100"></el-table-column>
-                <el-table-column prop="description" label="描述">
+                <el-table-column prop="description" label="描述（预览）">
                     <template scope="scope">
-                        <p class="destext">{{scope.row.description}}</p>
+                        <a class="destext" target="_blank" :href="scope.row.link">{{scope.row.description}}</a>
                     </template>
                 </el-table-column>
-                <el-table-column label="操作" align="center" width="150">
-                    <template scope="scope">
-                        <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-                        <a class="linktext" target="_blank" :href="scope.row.link">查看</a>
-                    </template>
-                </el-table-column>
+                <el-table-column prop="pubDate" label="时间" width="180"></el-table-column>
+                <el-table-column property="flag" label="来源" width="90"></el-table-column>
             </el-table>
             <div class="page-block">
-                <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage" :page-size="page.limit"
-                               layout="total,prev, pager, next, jumper" :total="page.count"></el-pagination>
+                <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage" :page-size="page.limit" layout="total,prev, pager, next, jumper" :total="page.count"></el-pagination>
             </div>
         </el-col>
     </div>
@@ -42,6 +35,7 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        color: #1f2d3d;
     }
 
     .linktext {
@@ -134,6 +128,14 @@
                 this.loading = true;
                 this.$http.get('news').then((res) => {
                     if (res.data.status) {
+                        self.getNews();
+                        self.loading = false;
+                    }else{
+                        this.$message({
+                            type: 'success',
+                            duration: 1000,
+                            message: '已经抓取了最新新闻'
+                        });
                         self.getNews();
                         self.loading = false;
                     }

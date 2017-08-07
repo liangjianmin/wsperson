@@ -21,7 +21,7 @@
   display: inline-block;
   margin: 0 5px;
   font-size: 32rpx;
-  color: #a1a1a1;
+  color: #172c45;
   padding: 20rpx;
   transition: all 0.4s linear;
 }

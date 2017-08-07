@@ -22,7 +22,7 @@ module.exports = {
      * @param callback
      */
     getNews: function (p, limit, callback) {
-        sql = "select * from news limit " + p + "," + limit;
+        sql = "select * from news ORDER BY id DESC limit " + p + "," + limit;
         mysqlDB.getTableAllInfo({sql: sql}, callback);
     },
     /**

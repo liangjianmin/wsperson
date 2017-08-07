@@ -111,7 +111,9 @@ body {
 .section-right {
   padding: 30px 30px 30px 20px;
   box-sizing: border-box;
-  height: calc(100vh - 60px); }
+  max-height: calc(100vh - 60px);
+  overflow: hidden;
+  overflow-y: auto; }
 
 .el-notification {
   left: 0;

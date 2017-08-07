@@ -6,7 +6,6 @@
               <el-table-column prop="username" label="姓名"></el-table-column>
               <el-table-column property="sex" label="性别"></el-table-column>
               <el-table-column prop="role" label="角色"></el-table-column>
-              <el-table-column prop="info" label="信息"></el-table-column>
               <el-table-column label="操作">
                   <template scope="scope">
                       <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)" :disabled="scope.row.role == '超级管理员' ? user.role == 1 || user.role == 2 : false">删除</el-button>
@@ -70,7 +69,7 @@
                 this.$confirm('确定删除该用户嘛', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
-                    type: 'success'
+                    type: 'warning'
                 }).then(() => {
                     this.$http.post('deleteUsers', {
                     id: row.id

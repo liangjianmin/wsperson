@@ -31,7 +31,6 @@ module.exports = function (app) {
                     var parse = JSON.parse(jsondata);
 
                     // 将数据保存到数据库中
-                    var sqldata = [];
                     news.getNew(function (data) {
                         for (let i = 0; i < parse.length; i++) {
                             news.saeveNews({
@@ -46,11 +45,13 @@ module.exports = function (app) {
                                 sql: "INSERT INTO news SET ?"
                             }, function (data) {
                                 if (data.status) {
-                                    sqldata.push(data);
-                                    console.log(sqldata)
-                                    /*if (i === parse.length - 1) {
-                                     res.send({status: true})
-                                     }*/
+                                    if (i === parse.length - 1) {
+                                        res.send({status: true})
+                                    }
+                                } else {
+                                    if (i === parse.length - 1) {
+                                        res.send({status: false})
+                                    }
                                 }
                             });
                         }

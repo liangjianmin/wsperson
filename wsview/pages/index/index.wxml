@@ -7,13 +7,13 @@
   </view>
 
   <view class="section">
-    <block wx:for="{{news}}">
+    <block wx:for="{{news}}" wx:key="unique">
       <navigator url="{{item.url}}?id={{item.id}}">
         <view class="item">
           <view class="txt">
-            <text>{{item.content}}</text>
+            <text>{{item.title}}</text>
           </view>
-          <text class="tip">2017-08-01 11:40:04</text>
+          <text class="tip">{{item.time}}</text>
         </view>
       </navigator>
     </block>

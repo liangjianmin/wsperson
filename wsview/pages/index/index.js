@@ -13,54 +13,28 @@ Page({
     ],
     news: [
       {
-        url:"/pages/details/index",
-        content: "杀妻骗保！男子外有小三并欠债 为妻买400万保险后谋划车祸",
-        id: '001'
-      },
-      {
-        url:"/pages/details/index",
-        content: "广西桂林发现珍稀古老物种雄王声猛蚁",
-        id: '002'
-      },
-      {
-        url: "/pages/details/index",
-        content: "习近平：绝不允许任何人把任何一块中国领土从中国分裂出去",
-        id: '003'
-      },
-      {
         url: "/pages/details/index",
         content: "杀妻骗保！男子外有小三并欠债 为妻买400万保险后谋划车祸",
         id: '001'
-      },
-      {
-        url: "/pages/details/index",
-        content: "广西桂林发现珍稀古老物种雄王声猛蚁",
-        id: '002'
-      },
-      {
-        url: "/pages/details/index",
-        content: "习近平：绝不允许任何人把任何一块中国领土从中国分裂出去",
-        id: '003'
-      },
-      {
-        url: "/pages/details/index",
-        content: "杀妻骗保！男子外有小三并欠债 为妻买400万保险后谋划车祸",
-        id: '001'
-      },
-      {
-        url: "/pages/details/index",
-        content: "广西桂林发现珍稀古老物种雄王声猛蚁",
-        id: '002'
-      },
-      {
-        url: "/pages/details/index",
-        content: "习近平：绝不允许任何人把任何一块中国领土从中国分裂出去",
-        id: '003'
       }
     ]
   },
-  onLoad: function () {
-
+  onReady: function () {
+    var self=this;
+    wx.showLoading({
+      title: '加载中',
+      mask:true
+    });
+    wx.request({
+      url: 'https://ljm.jiangwei58.cn/getnews?p=1',
+      data: {
+      
+      },
+      success: function (res) {
+        self.setData({ news: res.data.list.data });
+        wx.hideLoading()
+      }
+    })
   },
   handleTap: function (e) {
     let id = e.currentTarget.id;
